@@ -319,28 +319,7 @@
             </objects>
             <point key="canvasLocation" x="3032" y="84"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="24x-qK-6wg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dhE-99-hDf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gmj-fq-blI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="x9c-bf-mCM" kind="relationship" relationship="rootViewController" id="FqT-85-nBa"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4DV-Mu-yJT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4411.594202898551" y="83.705357142857139"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="FqT-85-nBa"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person.crop.rectangle.fill" catalog="system" width="128" height="93"/>

@@ -34,6 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // выводим приветствие на второй вьюконтроллер
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let tabBarController = segue.destination as! UITabBarController
         if let viewControllers = tabBarController.viewControllers {
         for viewController in viewControllers {

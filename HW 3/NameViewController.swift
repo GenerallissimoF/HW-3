@@ -14,7 +14,7 @@ class NameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+       nameInfoTF.text = user2.person.dateOfbirth
     }
     
 
