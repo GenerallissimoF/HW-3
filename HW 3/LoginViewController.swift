@@ -7,16 +7,19 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
-   
+class LoginViewController: UIViewController, UITextFieldDelegate {
+  
+    
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    
+    let user = User(login: "Ivan", password: "777", person: User.getPerson())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameTF.delegate = self
         passwordTF.delegate = self
-        
+        userNameTF.autocapitalizationType = .none
     // делаем кнопку return неактивной
         
         passwordTF.enablesReturnKeyAutomatically = true
@@ -31,20 +34,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // выводим приветствие на второй вьюконтроллер
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let newVC = segue.destination as! WelcomeViewController
-        newVC.welcomeVC = "Welcome, \(userNameTF.text!)"
-        
-    }
-    // переходим на второй вьюконтроллер нажатием на done (ну и еще кое-что)
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == userNameTF {
-            passwordTF.becomeFirstResponder()
-        } else {
-            passwordTF.resignFirstResponder()
-            chekUserNameAndPassword()
-            performSegue(withIdentifier: "WelcomeViewController", sender: self)
+        let tabBarController = segue.destination as! UITabBarController
+        if let viewControllers = tabBarController.viewControllers {
+        for viewController in viewControllers {
+            if let newVC = viewController as? WelcomeViewController {
+                newVC.welcomeVC = "Welcome, \(userNameTF.text!)"
+                
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as! UserViewController
+                aboutUserVC.userVC = "\(userNameTF.text!) Adoniev"
+                
+            } else if let navigationVCforName = viewController as? UINavigationController {
+                let aboutNameVC = navigationVCforName.topViewController as! NameViewController
+                aboutNameVC.user2 = user
+               
+                }
+            }
         }
+        }
+                // переходим на второй вьюконтроллер нажатием на done (ну и еще кое-что)
+                
+                func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+                    if textField == userNameTF {
+                        passwordTF.becomeFirstResponder()
+                    } else {
+                        chekUserNameAndPassword()
+                        passwordTF.text = ""
+                        performSegue(withIdentifier: "WelcomeViewController", sender: self)
+                    }
         return true
     }
     //меняем кнопку клавиатуры на next
@@ -63,10 +80,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // уведомления при забытом пароле или имени
     
     @IBAction func forgotNameAletrAction(_ sender: UIButton) {
-        allertWithButton(alertTitle:"Ooops😈!", titleMessage: "Your name is Ivan", buttonTitle: "Ok")
+        allertWithButton(alertTitle:"Ooops😈!", titleMessage: "Your name is \(user.login)", buttonTitle: "Ok")
     }
     @IBAction func forgotPasswordAlert(_ sender: UIButton) {
-        allertWithButton(alertTitle: "Ooops😈!", titleMessage: "Your password is 777", buttonTitle: "Ok")
+        allertWithButton(alertTitle: "Ooops😈!", titleMessage: "Your password is \(user.password)", buttonTitle: "Ok")
     }
     
     // упрощенная проверка на валидность и переход на второй VC. Не очень элегантно, но не было времени
@@ -91,8 +108,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         present(alert, animated: true, completion: nil)
 }
     // упрощенная проверка на валидность и переход на второй VC. Не очень элегантно, но не было времени
-    func chekUserNameAndPassword () {
-        if passwordTF.text != "777" && userNameTF.text != "Ivan" {
+   private func chekUserNameAndPassword () {
+       if passwordTF.text != user.password || userNameTF.text != user.login {
             if passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || userNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
                 allertWithButton(alertTitle: "Warrning!", titleMessage: "All fields must be filled", buttonTitle: "Ok")
             }
@@ -100,3 +117,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
 }
+
+
