@@ -32,27 +32,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super .touchesBegan(touches, with: event)
     }
     // выводим приветствие на второй вьюконтроллер
-    
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let tabBarController = segue.destination as! UITabBarController
         if let viewControllers = tabBarController.viewControllers {
-        for viewController in viewControllers {
-            if let newVC = viewController as? WelcomeViewController {
-                newVC.welcomeVC = "Welcome, \(userNameTF.text!)"
-                
-            } else if let navigationVC = viewController as? UINavigationController {
-                let aboutUserVC = navigationVC.topViewController as! UserViewController
-                aboutUserVC.userVC = "\(userNameTF.text!) Adoniev"
-                
-            } else if let navigationVCforName = viewController as? UINavigationController {
-                let aboutNameVC = navigationVCforName.topViewController as! NameViewController
-                aboutNameVC.user2 = user
-               
+            for viewController in viewControllers {
+                if let newVC = viewController as? WelcomeViewController {
+                    newVC.user1 = user
+                    
+                } else if let navigationVC = viewController as? UINavigationController {
+                    let aboutUserVC = navigationVC.topViewController as! UserViewController
+                    aboutUserVC.user2 = user
+            
+                    
                 }
             }
         }
-        }
+    }
                 // переходим на второй вьюконтроллер нажатием на done (ну и еще кое-что)
                 
                 func textFieldShouldReturn(_ textField: UITextField) -> Bool {

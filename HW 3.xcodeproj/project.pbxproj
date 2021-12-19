@@ -17,6 +17,8 @@
 		1D9E7BD3276BF36800E0D3DA /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E7BD2276BF36800E0D3DA /* UserViewController.swift */; };
 		1D9E7BD5276D3A2A00E0D3DA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E7BD4276D3A2A00E0D3DA /* Model.swift */; };
 		1D9E7BD7276E4E2400E0D3DA /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E7BD6276E4E2400E0D3DA /* NameViewController.swift */; };
+		1D9E7BD9276FB27A00E0D3DA /* DateOfBirthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E7BD8276FB27A00E0D3DA /* DateOfBirthViewController.swift */; };
+		1D9E7BDF276FB3EF00E0D3DA /* SomeFactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E7BDE276FB3EF00E0D3DA /* SomeFactsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		1D9E7BD2276BF36800E0D3DA /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		1D9E7BD4276D3A2A00E0D3DA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1D9E7BD6276E4E2400E0D3DA /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		1D9E7BD8276FB27A00E0D3DA /* DateOfBirthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirthViewController.swift; sourceTree = "<group>"; };
+		1D9E7BDE276FB3EF00E0D3DA /* SomeFactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeFactsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,16 +71,26 @@
 				1D9E7BBA2767DF9800E0D3DA /* AppDelegate.swift */,
 				1D9E7BBC2767DF9800E0D3DA /* SceneDelegate.swift */,
 				1D9E7BD4276D3A2A00E0D3DA /* Model.swift */,
-				1D9E7BBE2767DF9800E0D3DA /* LoginViewController.swift */,
-				1D9E7BCE276801A100E0D3DA /* WelcomeViewController.swift */,
-				1D9E7BD2276BF36800E0D3DA /* UserViewController.swift */,
-				1D9E7BD6276E4E2400E0D3DA /* NameViewController.swift */,
+				1D9E7BE0276FBC3900E0D3DA /* ViewControllers */,
 				1D9E7BC02767DF9800E0D3DA /* Main.storyboard */,
 				1D9E7BC32767DF9900E0D3DA /* Assets.xcassets */,
 				1D9E7BC52767DF9900E0D3DA /* LaunchScreen.storyboard */,
 				1D9E7BC82767DF9900E0D3DA /* Info.plist */,
 			);
 			path = "HW 3";
+			sourceTree = "<group>";
+		};
+		1D9E7BE0276FBC3900E0D3DA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D9E7BBE2767DF9800E0D3DA /* LoginViewController.swift */,
+				1D9E7BCE276801A100E0D3DA /* WelcomeViewController.swift */,
+				1D9E7BD2276BF36800E0D3DA /* UserViewController.swift */,
+				1D9E7BD6276E4E2400E0D3DA /* NameViewController.swift */,
+				1D9E7BD8276FB27A00E0D3DA /* DateOfBirthViewController.swift */,
+				1D9E7BDE276FB3EF00E0D3DA /* SomeFactsViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,8 +167,10 @@
 				1D9E7BBF2767DF9800E0D3DA /* LoginViewController.swift in Sources */,
 				1D9E7BD5276D3A2A00E0D3DA /* Model.swift in Sources */,
 				1D9E7BD3276BF36800E0D3DA /* UserViewController.swift in Sources */,
+				1D9E7BDF276FB3EF00E0D3DA /* SomeFactsViewController.swift in Sources */,
 				1D9E7BCF276801A100E0D3DA /* WelcomeViewController.swift in Sources */,
 				1D9E7BD7276E4E2400E0D3DA /* NameViewController.swift in Sources */,
+				1D9E7BD9276FB27A00E0D3DA /* DateOfBirthViewController.swift in Sources */,
 				1D9E7BBB2767DF9800E0D3DA /* AppDelegate.swift in Sources */,
 				1D9E7BBD2767DF9800E0D3DA /* SceneDelegate.swift in Sources */,
 			);

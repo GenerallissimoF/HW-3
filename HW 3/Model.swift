@@ -15,16 +15,18 @@ struct User {
     static func getPerson() -> Person {
         Person(nameAndSurname: "Иван Адоньев",
                dateOfbirth: "25 апреля 1985",
-               hometown: "Архангельск",
-               education: "исторический и юридический факультеты",
-               occupation: "руководитель отдела продаж IT-компании")
+               someFacts: """
+               ✅Родился и живу в г. Архангельск.
+               ✅Два высших гуманитарных образования.
+               ✅Руководитель отдела продаж IT-компании.
+               ✅Воспитываю дочь.
+               """)
 }
 }
 
 struct Person {
     let nameAndSurname: String
     var dateOfbirth: String
-    let hometown: String
-    let education: String
-    let occupation: String
+    let someFacts: String
+   
 }
